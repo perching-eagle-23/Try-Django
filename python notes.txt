@@ -62,5 +62,13 @@ python manage.py runserver (provides a working url for the development server)
 python manage.py makemigrations
 python manage.py migrate (syncs settings from django project with apps - for example, hooks up the server.  run first) 
 python manage.py createsuperuser username email password (this user is now in the database.  login at "root/admin" in browser)
+python manage.py shell (a py environment with access to django project stuff, ie models)
 
 !! Apps should be narrow and focused.  Once it starts to get wide, start another app. !!
+
+
+---
+Git commands
+---
+git status
+git add fileordirtotrackchangesof
