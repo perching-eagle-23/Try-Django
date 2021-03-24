@@ -1,0 +1,66 @@
+Virtual directory packages: venv, virtualenv, pipenv
+
+venv is native, the other two are installed with pip
+
+pipenv stores the virtual environment in a .virtualenvs dir in the main python install; the other two, in a dir in the dir where they're initiated
+
+---
+
+systemwide: 
+pip install pipenv OR virtualenv
+
+Show packages in working python environment: 
+pip freeze
+
+Or, show that the python running is sourced differently: 
+import sys
+print(sys.executable)
+
+---
+
+create a virtualenv in the working dir: 
+virtualenv newdirname 
+OR
+virtualenv . (to install directly in the working dir)
+
+start venv in dir: 
+python -m venv dirname
+
+For pipvenv, start the environment with: 
+"To activate this projects' virtualenv, run: 
+pipenv shell
+Alternatively, run a command insde the virtualenv with 
+pipenv run"
+
+For venv OR virtualenv directory, start the environment with: 
+.\scripts\activate
+
+use virtual package manager to install packages in the working dir in cmd: 
+pipenv install somepackage
+
+---
+Powershell Commands
+---
+mkdir dirname
+cd dirname
+cd .. (to go up) 
+ls (to list directory items)
+ii . (to open dir items in window)
+pwd (project working directory.  this is also the string given by the BASE_DIR variable in settings.py in django)
+
+to enable scripts (running as administrator) : 
+Set-ExecutionPolicy Unrestricted
+
+---
+Django
+---
+(from the directory wherever manage.py is: )
+
+django-admin 
+django-admin startproject projectname dir (dir="." for current dir)
+python manage.py runserver (provides a working url for the development server)
+python manage.py makemigrations
+python manage.py migrate (syncs settings from django project with apps - for example, hooks up the server.  run first) 
+python manage.py createsuperuser username email password (this user is now in the database.  login at "root/admin" in browser)
+
+!! Apps should be narrow and focused.  Once it starts to get wide, start another app. !!
